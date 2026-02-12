@@ -1,161 +1,112 @@
 # Memory Dump Forensics Tool
 
-A Python-based memory dump analysis tool built on top of the Volatility3 framework. This tool provides automated analysis of memory dumps with rich terminal output and comprehensive forensic capabilities.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Volatility3](https://img.shields.io/badge/Framework-Volatility3-green)
+![License](https://img.shields.io/badge/License-MIT-orange)
+
+A powerful Python-based memory dump analysis tool built on top of the Volatility3 framework. This tool automates the triage of memory dumps, providing rich terminal output and comprehensive forensic capabilities for incident response and malware analysis.
 
 ## Features
 
 ### Core Analysis
-- Process enumeration and analysis
-- Network connection detection
-- Operating system information extraction
-- Command line argument reconstruction
+- **Process Enumeration:** Deep analysis of running processes and hierarchy.
+- **Network Detection:** Identification of active connections and listening ports.
+- **OS Extraction:** Automated retrieval of system architecture and version details.
+- **Command Line Reconstruction:** Recover arguments used to launch processes.
 
 ### Advanced Forensics
-- Windows services analysis
-- DLL mapping and inspection
-- Malicious memory section detection (using Malfind)
-- Registry hive analysis
-- Suspicious pattern detection
+- **Windows Services:** Analysis of service configurations and associated binaries.
+- **DLL Inspection:** Mapping of loaded modules and base addresses.
+- **Malware Detection:** Automated scanning for injected code and malicious memory sections (Malfind).
+- **Registry Analysis:** Extraction of active hives and modification times.
+- **Suspicious Patterns:** Heuristic detection of potential threats.
 
-### Tool Features
-- Rich terminal output with formatted tables
-- Progress tracking for long operations
-- Comprehensive logging
-- Asynchronous operation for better performance
-- Type-annotated codebase for reliability
+### Tool Highlights
+- 🖥️ **Rich Terminal UI:** Formatted tables and color-coded output.
+- ⏳ **Progress Tracking:** Live progress bars for long-running operations.
+- 📝 **Comprehensive Logging:** Auto-generates detailed logs for evidence.
+- ⚡ **Asynchronous:** Optimized for performance.
 
 ## Requirements
 
 - Python 3.8+
 - Volatility3 framework
-- Rich library for terminal output
+- Rich library (for terminal output)
 
 ## Installation
 
-1. Clone this repository:
+1. Clone the repository:
 ```bash
-git clone https://github.com/AlephNullSK/memory-forensics-triage.git
-cd memory-forensics-triage
-```
+git clone [https://github.com/Guransh-ship-it/Memory-forensic-tool.git]
+cd Memory-forensic-tool
+Create a virtual environment (recommended):
 
-2. Create a virtual environment (recommended):
-```bash
+Bash
+# Windows
 python -m venv venv
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-```
+venv\Scripts\activate
 
-3. Install dependencies:
-```bash
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+Install dependencies:
+
+Bash
 pip install volatility3 rich
-```
+Usage
+Run the tool against a memory dump file (e.g., .raw, .dmp, .mem):
 
-## Usage
-
-Basic usage:
-```bash
-python memory_forensics.py path/to/memory_dump
-```
-
+Bash
+python memory_forensics.py path/to/memory_dump.raw
 The tool will automatically:
-1. Analyze the memory dump
-2. Display progress bars for each analysis phase
-3. Output formatted results to the terminal
-4. Log all operations to `memory_analysis.log`
 
-## Output Example
+Analyze the memory dump.
 
-The tool provides detailed information in several categories:
+Display progress bars for each analysis phase.
 
-```
+Output formatted results to the terminal.
+
+Save a full log to memory_analysis.log.
+
+Output Example
+Plaintext
 === Memory Dump Analysis Results ===
 
 [Operating System Information]
-- OS Version
-- System Architecture
-- Installation Time
-- Other system details
+- OS Version: Windows 10
+- System Architecture: x64
+- Installation Time: 2023-01-01 12:00:00
 
 [Process Information]
-- Running processes
-- Process hierarchy
-- Start/Exit times
-- Thread counts
+- Running processes: 142
+- Suspicious processes detected: 2
 
 [Network Information]
-- Active connections
-- Listening ports
-- Connection states
+- Active connections: 15
+- Listening ports: 445, 135, 80
 
-[Services Information]
-- Running services
-- Service configurations
-- Associated processes
+[Malfind Analysis]
+- Injected Code Detected: PID 452 (svchost.exe) - RWX region found
+Legal & Disclaimer
+This tool is intended for legitimate forensic investigation, incident response, security research, and educational purposes only.
 
-[DLL Analysis]
-- Loaded modules
-- Base addresses
-- File paths
+Important: Ensure you have proper authorization before analyzing any memory dumps. The author is not responsible for any damage caused by the use of this tool or for any unauthorized forensic analysis.
 
-[Suspicious Memory Sections]
-- Potentially malicious regions
-- Memory protection analysis
-- Hexdumps of suspicious sections
+Contributing
+Contributions are welcome! If you have ideas for new modules or detection capabilities, please submit a Pull Request.
 
-[Registry Analysis]
-- Active hives
-- Last written times
-- Registry paths
-```
+Future Plans
+[ ] Timeline analysis
 
-## Legal Considerations
+[ ] String search capabilities
 
-This tool is intended for:
-- Legitimate forensic investigation
-- Incident response
-- Security research
-- Educational purposes
+[ ] User session information
 
-**Important:** Ensure you have proper authorization before analyzing any memory dumps. Unauthorized forensic analysis may be illegal in your jurisdiction.
+[ ] Export to JSON/CSV
 
-## Contributing
 
-Contributions are welcome! Please read our contributing guidelines before submitting pull requests.
 
-### Areas for Contribution
-- Additional analysis modules
-- Performance improvements
-- Output format options
-- New detection capabilities
-- Documentation improvements
+Contact
+Project Maintainer: Guransh
 
-## Future Plans
-
-- [ ] Timeline analysis
-- [ ] String search capabilities
-- [ ] File handles analysis
-- [ ] User session information
-- [ ] Environment variable analysis
-- [ ] Export to common forensics formats
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Volatility Foundation for the Volatility3 framework
-- Contributors to the Rich library
-- All contributors to this project
-
-## Security
-
-If you discover any security-related issues, please email security@alephnull.sk instead of using the issue tracker.
-
-## Contact
-
-- Author: Aleph Null s.r.o.
-- Website: https://alephnull.sk
-
-## Disclaimer
-
-This tool is provided "as is" without warranty of any kind. Use at your own risk. The authors are not responsible for any damage caused by the use of this tool.
+If you discover any security-related issues or have feature requests, please open an issue on the GitHub repository.
