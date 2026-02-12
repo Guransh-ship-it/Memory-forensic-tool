@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Volatility3](https://img.shields.io/badge/Framework-Volatility3-green)
-![License](https://img.shields.io/badge/License-MIT-orange)
+
 
 A powerful Python-based memory dump analysis tool built on top of the Volatility3 framework. This tool automates the triage of memory dumps, providing rich terminal output and comprehensive forensic capabilities for incident response and malware analysis.
 
